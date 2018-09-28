@@ -1,4 +1,4 @@
-# BetterLyft™ 
+# BetterLyft™
 
 ## Deliverables
 You are building an app for a Lyft/Uber competitor. The models that you will use for your application are: Passenger, Driver, and Ride.
@@ -7,7 +7,7 @@ You are building an app for a Lyft/Uber competitor. The models that you will use
   - A Passenger has many rides
   - A Driver has many rides
   - A Ride belongs to a passenger and a driver
-  
+
 Always start by drawing out the relationship either on a whiteboard or piece of paper. Think about how each of these models will be connected. From there then begin writing code.
 
 ## Deliverables
@@ -29,27 +29,26 @@ A Passenger should be initialized with a name as a string. After the Passenger h
 - `Passenger.premium_members`
   - Returns an array of all Passengers who have travelled over 100 miles in total with the service
 
-#### Ride
-A Ride should be initialized with a driver (as a Driver object), a passenger (as a Passenger object), and a distance (as a float i.e. `3.2`). The distance refers to miles.
-- `Ride#passenger`
+<!-- #### Ride
+A Ride should be initialized with a driver (as a Driver object), a passenger (as a Passenger object), and a distance (as a float i.e. `3.2`). The distance refers to miles. -->
+<!-- - `Ride#passenger`
   - Returns the Passenger object for that ride
-- `Ride#driver`
-  - Returns the Driver object for that ride
-- `Ride#distance`
+<!-- - `Ride#driver`
+  - Returns the Driver object for that ride -->
+<!-- - `Ride#distance`
   - Returns the distance of the ride
-- `Ride.average_distance`
-  - Returns the average distance across ALL rides
-  
-#### Driver
-A Driver should be initialized with a name as a string.
-- `Driver#name`
-  - Returns the driver's name
-- `Driver#passenger_names`
-  - Returns an array of all Passengers' names a driver has driven. The names should be **unique** (no repeats).
-- `Driver#rides`
-  - Returns an array of all Rides a driver has made
-- `Driver.all`
-  - Returns an array of all Drivers
-- `Driver.mileage_cap(distance)`
-  - Takes an argument of a distance (float) and returns an array of all Drivers who have driven over the mileage
+- `Ride.average_distance` -->
+  <!-- - Returns the average distance across ALL rides --> -->
 
+#### Driver
+<!-- A Driver should be initialized with a name as a string. -->
+<!-- - `Driver#name` -->
+  <!-- - Returns the driver's name -->
+<!-- - `Driver#passenger_names` -->
+  <!-- - Returns an array of all Passengers' names a driver has driven. The names should be **unique** (no repeats). -->
+<!-- - `Driver#rides` -->
+  <!-- - Returns an array of all Rides a driver has made -->
+<!-- - `Driver.all` -->
+  <!-- - Returns an array of all Drivers -->
+<!-- - `Driver.mileage_cap(distance)` -->
+  <!-- - Takes an argument of a distance (float) and returns an array of all Drivers who have driven over the mileage -->
