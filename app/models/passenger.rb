@@ -1,6 +1,5 @@
 class Passenger
 
-  	attr_accessor :ride, :total
   	attr_reader :name
 
      @@all = []

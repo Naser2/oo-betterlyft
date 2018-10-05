@@ -5,11 +5,10 @@ class Ride
 
   @@all = []
 
-    def initialize(ride_number, passenger, driver, distance)
+    def initialize(passenger, driver, distance)
     	@@all << self
     	@distance = distance.to_f
       @passenger = passenger
-      @ride_number = ride_number
       @driver = driver
     end
 

@@ -1,23 +1,34 @@
 require 'pry'
+# driver1 = Driver.new("Helen")
+# driver1.name => "Helen"
+# driver1.name = "Helen Liutongco"
 
 class Driver
 
 	attr_reader :name
 
   	@@all = []
+
   	def initialize(name)
   		@name = name
   		@@all << self
   	end
 
-  	def name
-  		@name
-  	end
+    def self.all
+    	@@all
+    end
+
+  	# def name
+  	# 	@name
+  	# end
 
     def passenger_names # Returns all passengers of given dirver => ["Ben", "Tyler", "Sekou"]
-      passenger_names = []
-        Ride.all.select do |ride|
-        passenger_names <<  ride.passenger.name
+      # passenger_names = []
+      driver_rides =  Ride.all.select do |ride|
+       ride.driver == self
+		  end
+			passengers_names = driver_rides.map do |ride|
+				ride.passenger.name
       end
        passenger_names.uniq!#got rid of duplicate passsenger's name
     end
@@ -25,32 +36,34 @@ class Driver
      # ADD a ride count per each driver
 
     def rides  # returns rides of given driver
-        Ride.all.find_all do|ride| ride.driver == self
+        Ride.all.select do|ride| ride.driver == self
       end
     end
 
 
     def milleage_counter
       counter = 0
-      Ride.all.each do |ride| counter += ride.distance
+      driver_rides = Ride.all.each do |ride|
+				ride.driver == self
       end
-      counter
-    end
+			 driver_rides.each do |ride|
+				counter += ride.distance
+       end
+     counter
+		 end
 
 
-    def self.milleage_cap(distance) #not completed 
-      cap = []
-      Driver.all.select do |driver| unless
-      driver.milleage_counter <= distance
-      cap << driver.milleage_counter
-        end
+    def self.milleage_cap(distance) # not completed
+      driven_over_distance = Driver.all.select do |driver|
+				driver.milleage_counter >  distance
+			end
+
+				driven_over_distance
+			end
+      # driver.milleage_counter <= distance
+      # cap << driver.milleage_counter
         # return "#{driver.name} your milleage is #{milleage_counter}"
-      #end
-      end
-    end
+      #
 
-    def self.all
-    	@@all
-    end
 
 end
